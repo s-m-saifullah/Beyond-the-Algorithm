@@ -103,7 +103,7 @@ export default function App() {
         navItems={navItems}
       />
       
-      <main className={`flex-1 overflow-y-auto h-screen px-6 pb-6 pt-20 lg:p-12 relative transition-all duration-300 ${!isSidebarOpen ? 'lg:ml-0' : ''}`}>
+      <main className={`flex-1 overflow-y-auto h-screen px-6 pt-20 pb-24 lg:px-12 lg:pt-12 lg:pb-24 relative transition-all duration-300 ${!isSidebarOpen ? 'lg:ml-0' : ''}`}>
         {/* Toggle Sidebar Button (Desktop) - visible when sidebar is closed */}
         {!isSidebarOpen && (
              <button 
