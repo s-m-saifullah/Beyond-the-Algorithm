@@ -1,3 +1,10 @@
+/**
+ * @file FindingsScreen.jsx
+ * @description The "Data" screen (Impact Analysis).
+ * Presents quantitative results showing time savings and qualitative focus shifts.
+ * Uses Recharts for data visualization.
+ */
+
 import React from 'react';
 import { PieChart, Users, Search, Clock, ThumbsUp, AlertTriangle } from 'lucide-react';
 

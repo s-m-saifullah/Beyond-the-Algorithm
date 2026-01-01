@@ -1,5 +1,11 @@
+/**
+ * @file MethodologyScreen.jsx
+ * @description The "Methods" screen (The Co-Grading Workflow).
+ * Visualizes the 3-step process: Student Submission -> AI Assistant -> Human Instructor.
+ */
+
 import React from 'react';
-import { MessageSquare, Users, Microscope } from 'lucide-react';
+import { FileText, Cpu, UserCheck } from 'lucide-react';
 
 const MethodologyScreen = () => (
   <div className="max-w-5xl mx-auto animate-in slide-in-from-right duration-500">

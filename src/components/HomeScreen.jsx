@@ -1,3 +1,9 @@
+/**
+ * @file HomeScreen.jsx
+ * @description The landing page screen.
+ * Introduces the research topic and provides a "Start Presentation" CTA.
+ */
+
 import React from 'react';
 import { Brain, ArrowRight } from 'lucide-react';
 

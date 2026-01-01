@@ -1,3 +1,11 @@
+/**
+ * @file Sidebar.jsx
+ * @description The navigation sidebar component.
+ * Displays navigation links, handles mobile/tablet collapse logic,
+ * and includes the theme toggle switch.
+ * @component
+ */
+
 import React from 'react';
 import { Home, AlertTriangle, Microscope, BarChart2, Layers, CheckCircle, Moon, Sun, X, ChevronLeft } from 'lucide-react';
 import mlaLogo from '../assets/mla-logo.svg';
@@ -48,7 +56,9 @@ const Sidebar = ({ activeSection, setActiveSection, isSidebarOpen, setIsSidebarO
                 key={item.id}
                 onClick={() => {
                   setActiveSection(item.id);
-                  // On mobile, close sidebar after selection with delay
+                  // On mobile/tablet (<1024px), delayed close logic:
+                  // 1. User clicks item -> Active state updates immediately (visual feedback)
+                  // 2. Wait 750ms -> Close sidebar (giving time to see the selection)
                   if (window.innerWidth < 1024) {
                     setTimeout(() => setIsSidebarOpen(false), 750);
                   }

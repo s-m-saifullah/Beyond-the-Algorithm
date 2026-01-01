@@ -1,3 +1,11 @@
+/**
+ * @file App.jsx
+ * @description Main Application Component.
+ * Manages global state (theme, sidebar visibility, active section),
+ * handles routing/navigation between presentation screens,
+ * and defines the responsive layout structure.
+ */
+
 import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import HomeScreen from './components/HomeScreen';
@@ -10,7 +18,11 @@ import { Menu, Home, AlertTriangle, Microscope, BarChart2, Layers, CheckCircle, 
 
 // --- MAIN APP COMPONENT ---
 export default function App() {
+  // State: Tracks the currently visible presentation screen
   const [activeSection, setActiveSection] = useState('home');
+  
+  // State: Tracks sidebar visibility. 
+  // Initializes based on viewport width (Open on Desktop >= 1024px, Closed on Mobile).
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
     if (typeof window !== 'undefined') {
       return window.innerWidth >= 1024;
@@ -24,6 +36,7 @@ export default function App() {
     return 'light';
   });
 
+  // Effect: Applies the 'dark' class to the document root (HTML tag) for Tailwind dark mode support
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -37,6 +50,8 @@ export default function App() {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
 
+  // Navigation Items Configuration
+  // Centralized source of truth for navigation order and icons
   const navItems = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'context', label: 'Problem', icon: AlertTriangle },
@@ -46,6 +61,9 @@ export default function App() {
     { id: 'toolkit', label: 'Toolkit', icon: CheckCircle },
   ];
 
+  /**
+   * Advances to the next section in the navItems array.
+   */
   const handleNext = () => {
     const currentIndex = navItems.findIndex(item => item.id === activeSection);
     if (currentIndex < navItems.length - 1) {
@@ -53,6 +71,9 @@ export default function App() {
     }
   };
 
+  /**
+   * Returns to the previous section in the navItems array.
+   */
   const handlePrev = () => {
     const currentIndex = navItems.findIndex(item => item.id === activeSection);
     if (currentIndex > 0) {
@@ -60,6 +81,9 @@ export default function App() {
     }
   };
 
+  /**
+   * Renders the appropriate component based on the activeSection state.
+   */
   const renderSection = () => {
     switch(activeSection) {
       case 'home': return <HomeScreen setSection={setActiveSection} />;

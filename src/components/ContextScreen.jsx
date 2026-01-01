@@ -1,5 +1,11 @@
+/**
+ * @file ContextScreen.jsx
+ * @description The "Problem" screen (The Core Conflict).
+ * Outlines the tension between Efficiency (AI) and Equity/Humanity in grading.
+ */
+
 import React from 'react';
-import { Scale, User } from 'lucide-react';
+import { TrendingUp, Users } from 'lucide-react';
 
 const ContextScreen = () => (
   <div className="max-w-4xl mx-auto animate-in slide-in-from-right duration-500">

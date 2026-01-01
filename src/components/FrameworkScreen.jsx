@@ -1,5 +1,11 @@
+/**
+ * @file FrameworkScreen.jsx
+ * @description The "Framework" screen (Pedagogical Implications).
+ * Discusses the shift from "Gatekeeping" to "Mentorship" enabled by AI co-grading.
+ */
+
 import React from 'react';
-import { FileText, Cpu, User, Users } from 'lucide-react';
+import { FileText, Cpu, User, Users, ShieldAlert, HeartHandshake } from 'lucide-react';
 
 const FrameworkScreen = () => (
   <div className="animate-in fade-in slide-in-from-right duration-500">

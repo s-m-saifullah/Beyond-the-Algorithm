@@ -1,4 +1,11 @@
+/**
+ * @file ToolkitScreen.jsx
+ * @description The "Toolkit" screen (Implementation Guide).
+ * Provides actionable steps for instructors to adopt the co-grading workflow.
+ */
+
 import React from 'react';
+import { CheckSquare, Download } from 'lucide-react';
 
 const ToolkitScreen = () => (
   <div className="animate-in fade-in slide-in-from-right duration-500 max-w-4xl mx-auto">
