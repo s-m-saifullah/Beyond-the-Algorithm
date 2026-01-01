@@ -3,8 +3,6 @@
  * @description Global styles for the application, including Tailwind CSS directives and custom variants.
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));

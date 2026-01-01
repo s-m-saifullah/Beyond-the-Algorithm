@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { TrendingUp, Users } from 'lucide-react';
+import { Scale, User } from 'lucide-react';
 
 const ContextScreen = () => (
   <div className="max-w-4xl mx-auto animate-in slide-in-from-right duration-500">

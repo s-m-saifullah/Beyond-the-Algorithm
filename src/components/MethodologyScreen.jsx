@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { FileText, Cpu, UserCheck } from 'lucide-react';
+import { MessageSquare, Users, Microscope } from 'lucide-react';
 
 const MethodologyScreen = () => (
   <div className="max-w-5xl mx-auto animate-in slide-in-from-right duration-500">

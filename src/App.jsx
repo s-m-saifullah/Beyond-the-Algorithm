@@ -14,7 +14,9 @@ import MethodologyScreen from './components/MethodologyScreen';
 import FindingsScreen from './components/FindingsScreen';
 import FrameworkScreen from './components/FrameworkScreen';
 import ToolkitScreen from './components/ToolkitScreen';
-import { Menu, Home, AlertTriangle, Microscope, BarChart2, Layers, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import NavigationControls from './components/NavigationControls';
+import { navItems } from './data/navigation';
+import { Menu } from 'lucide-react';
 
 // --- MAIN APP COMPONENT ---
 export default function App() {
@@ -49,17 +51,6 @@ export default function App() {
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
-
-  // Navigation Items Configuration
-  // Centralized source of truth for navigation order and icons
-  const navItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'context', label: 'Problem', icon: AlertTriangle },
-    { id: 'methods', label: 'Methods', icon: Microscope },
-    { id: 'findings', label: 'Data', icon: BarChart2 },
-    { id: 'framework', label: 'Framework', icon: Layers },
-    { id: 'toolkit', label: 'Toolkit', icon: CheckCircle },
-  ];
 
   /**
    * Advances to the next section in the navItems array.
@@ -142,26 +133,12 @@ export default function App() {
         {renderSection()}
 
         {/* Floating Navigation Buttons (Bottom Right) */}
-        {activeSection !== 'home' && (
-          <div className="fixed bottom-6 right-6 z-50 flex gap-4">
-             <button 
-               onClick={handlePrev}
-               disabled={navItems.findIndex(i => i.id === activeSection) === 0}
-               className="p-3 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 shadow-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed border border-slate-200 dark:border-slate-700"
-               title="Previous"
-             >
-               <ChevronLeft size={24} />
-             </button>
-             <button 
-               onClick={handleNext}
-               disabled={navItems.findIndex(i => i.id === activeSection) === navItems.length - 1}
-               className="p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-slate-400"
-               title="Next"
-             >
-               <ChevronRight size={24} />
-             </button>
-          </div>
-        )}
+        <NavigationControls 
+          activeSection={activeSection}
+          navItems={navItems}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
+        />
       </main>
     </div>
   );
