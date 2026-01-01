@@ -39,10 +39,10 @@ const FindingsScreen = () => {
             <div>
               <div className="flex justify-between text-sm mb-1">
                 <span className="font-semibold text-slate-600 dark:text-slate-300">Trust in Creativity Feedback</span>
-                <span className="text-orange-500 font-bold">91% Human Preferred</span>
+                <span className="text-orange-400 font-bold">91% Human Preferred</span>
               </div>
               <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-3 flex justify-end">
-                <div className="bg-orange-500 h-3 rounded-full" style={{width: '91%'}}></div>
+                <div className="bg-orange-400 h-3 rounded-full" style={{width: '91%'}}></div>
               </div>
             </div>
 
@@ -50,10 +50,10 @@ const FindingsScreen = () => {
             <div>
               <div className="flex justify-between text-sm mb-1">
                 <span className="font-semibold text-slate-600 dark:text-slate-300">Trust in Argument Logic</span>
-                <span className="text-orange-500 font-bold">65% Human Preferred</span>
+                <span className="text-orange-400 font-bold">65% Human Preferred</span>
               </div>
               <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-3 flex justify-end">
-                <div className="bg-orange-500 h-3 rounded-full" style={{width: '65%'}}></div>
+                <div className="bg-orange-400 h-3 rounded-full" style={{width: '65%'}}></div>
               </div>
             </div>
           </div>
